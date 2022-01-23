@@ -39,25 +39,25 @@ public class Graph {
         public void linked_Connections(){
             //پیمایش گراف گلوبال با دو حلقه فور تو در تو و وصل کردن کانکشن ها برای هر گره
             for(Vertex vertex : global_Graph.values()){
-                for(int connection : vertex.userValue.connectionId){
+                for(String connection : vertex.userValue.connectionId){
                     vertex.neighbors.add(global_Graph.get(connection));
                 }
             }
         }
-        public int distance_Vertex(User user){
-            //شی this  را فاصله اش را با user پیدا میکند
-        }
-        public double give_Priority(User user){
-            //اولویت user را برای شی this  محاسبه و در مقدار اولویت شی user ذخیره میکند
-        }
+//        public int distance_Vertex(User user){
+//            //شی this  را فاصله اش را با user پیدا میکند
+//        }
+//        public double give_Priority(User user){
+//            //اولویت user را برای شی this  محاسبه و در مقدار اولویت شی user ذخیره میکند
+//        }
         public void traversal_for_give_priority(){
             //پیشمایش از شی this و برای هر گره ک پیمایش میشود تابع give_piority  را صدا میزند
         }
-        public ArrayList<Vertex> traversal_for_top20_suggestion(){
-            //پیمایش گراف با مبدا شی  this  و اضافه کردن 20 تا از بیشترین اولویت ها به لیست و برگرداندن آن
-        }
+//        public ArrayList<Vertex> traversal_for_top20_suggestion(){
+//            //پیمایش گراف با مبدا شی  this  و اضافه کردن 20 تا از بیشترین اولویت ها به لیست و برگرداندن آن
+//        }
 
     }
-    public static Map<Integer,Vertex> global_Graph=new LinkedHashMap<>();
+    public static Map<String,Vertex> global_Graph=new LinkedHashMap<>();
 
 }

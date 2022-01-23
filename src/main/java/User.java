@@ -3,16 +3,19 @@ package main.java;
 import java.util.ArrayList;
 
 public class User {
-    private int id;
+    private String id;
     private String name;
     private String dateOfBirth;
     private String universityLocation;
     private String field;
     private String workplace;
     ArrayList<String> specialties;
-    ArrayList<Integer> connectionId;
+    ArrayList<String> connectionId;
 
-    public User(int id,String name,String dateOfBirth,String universityLocation,String field,String workplace,ArrayList<String> specialties,ArrayList<Integer> connectionId){
+    public User(){
+
+    }
+    public User(String id,String name,String dateOfBirth,String universityLocation,String field,String workplace,ArrayList<String> specialties,ArrayList<String> connectionId){
         this.id=id;
         this.name=name;
         this.dateOfBirth=dateOfBirth;
@@ -40,7 +43,7 @@ public class User {
         this.field = field;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -69,7 +72,7 @@ public class User {
 //        return specialties;
 //    }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -88,7 +91,15 @@ public class User {
     public String getWorkplace() {
         return workplace;
     }
-//___________________________________________________________________________//
+
+    public ArrayList<String> getSpecialties() {
+        return specialties;
+    }
+
+    public ArrayList<String> getConnectionId() {
+        return connectionId;
+    }
+    //___________________________________________________________________________//
 
     public void print_User_Data(){
         System.out.println("_____________________________ USER INFO __________________________");
