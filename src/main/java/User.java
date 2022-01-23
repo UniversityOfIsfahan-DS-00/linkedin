@@ -31,9 +31,6 @@ public class User {
         this.name = name;
     }
 
-//    public void setConnectionId(ArrayList<Integer> connectionId) {
-//        this.connectionId = connectionId;
-//    }
 
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
@@ -47,9 +44,7 @@ public class User {
         this.id = id;
     }
 
-//    public void setSpecialties(ArrayList<String> specialties) {
-//        this.specialties = specialties;
-//    }
+
 
     public void setUniversityLocation(String universityLocation) {
         this.universityLocation = universityLocation;
@@ -63,14 +58,7 @@ public class User {
         return name;
     }
 
-//    public ArrayList<Integer> getConnectionId() {
-//        return connectionId;
-//    }
 
-
-//    public ArrayList<String> getSpecialties() {
-//        return specialties;
-//    }
 
     public String getId() {
         return id;
@@ -100,6 +88,66 @@ public class User {
         return connectionId;
     }
     //___________________________________________________________________________//
+
+    public int isColleague(User user){
+        //ایا user همکار من هست یا ن؟در محل کار من کار میکند یا ن؟
+        if(this.workplace.equals(user.workplace)){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+
+    public int isInUniversity(User user){
+        //ایا user در دانشگاه من تحصیل کرده است؟
+        if(this.universityLocation.equals(user.universityLocation)){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+
+    public int isInField(User user){
+        //ایا user در field  کاری من فعالیت میکند؟
+        if(this.field.equals(user.field)){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+
+    public int numCommonSpecialties(User user){
+        //تعداد تخصص های مشترک با user
+        int numS=0;
+        for(int i=0;i<this.specialties.size();i++){
+            for(int j=0;j<user.specialties.size();j++){
+                if(this.specialties.get(i).equals(user.getSpecialties().get(j))){
+                    numS++;
+                }
+            }
+        }
+        return numS;
+    }
+
+    public int numCommonConnections(User user){
+        //تعداد connection  های مشترک با user
+        int numC=0;
+        for(int i=0;i<this.connectionId.size();i++){
+            for(int j=0;j<user.connectionId.size();j++){
+                if(this.connectionId.get(i).equals(user.getConnectionId().get(j))){
+                    numC++;
+                }
+            }
+        }
+        return numC;
+    }
+
+
+
+
 
     public void print_User_Data(){
         System.out.println("_____________________________ USER INFO __________________________");
